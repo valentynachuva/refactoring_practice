@@ -1,5 +1,6 @@
 <?php
 
+//Hint - Open Closed Principle
 class AnotherProgrammer
 {
     public function code()

@@ -1,5 +1,6 @@
 <?php
 
+//Hint - use Single Responsibility Principle Violation
 class Report
 {
     public function getTitle()

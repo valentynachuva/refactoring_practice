@@ -1,5 +1,6 @@
 <?php
 
+//Hint - Liskov Substitution Principle
 class Rectangle
 {
     protected $width;

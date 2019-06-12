@@ -1,5 +1,6 @@
 <?php
 
+//Hint - Dependency Inversion Principle
 class Mailer
 {
 }

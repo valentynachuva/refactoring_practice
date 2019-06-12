@@ -1,6 +1,6 @@
 <?php
 
-//Hint - Open Closed Principle
+//Hint - Interface Segregation Principle
 interface Workable
 {
     public function canCode();

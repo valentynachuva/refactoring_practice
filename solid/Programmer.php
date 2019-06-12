@@ -1,5 +1,6 @@
 <?php
 
+//Hint - Open Closed Principle
 interface Workable
 {
     public function canCode();

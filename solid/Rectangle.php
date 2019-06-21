@@ -42,19 +42,15 @@ class Rectangle extends Figure
 
 class Square extends Figure
 {
-    protected $size;
-
-    public function setSize($size)
-    {
-        $this->size = $size;
-    }
-    public function getSize($size)
-    {
-        $this->size = $size;
-    }
     public function area()
     {
+        if ($this->height = $this->width)
+        {
         return $this->height * $this->width;
+        }
+    else {
+     return  "Bad area \n";
+ }
     }
 }
 
@@ -62,17 +58,18 @@ class RectangleTest
 {
     private $rectangle;
 
-    public function __construct(Rectangle $rectangle)
+    public function __construct ($rectangle)
     {
         $this->rectangle = $rectangle;
     }
 
     public function testArea()
     {
-        $this->rectangle->setHeight(2);
-        $this->rectangle->setWidth(3);
-        if ($this->rectangle->area() !== 6) {
-            return "Bad area \n";
+        var_dump($this->rectangle->setHeight(2));
+        var_dump($this->rectangle->setWidth(3));
+       
+      if ($this->rectangle->area() !== 6) {
+            return var_dump($this->rectangle->area()) . "Bad area \n";
         } else {
             return "Test passed! \n";
         }
@@ -86,5 +83,5 @@ echo $rectangleTest->testArea();
 
 $square = new Square();
 echo "Calc area for square \n";
-$rectangleTest = new RectangleTest($square);
-echo $rectangleTest->testArea();
+$rectangleTest1 = new RectangleTest($square);
+echo $rectangleTest1->testArea();

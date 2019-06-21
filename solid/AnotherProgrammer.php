@@ -1,8 +1,15 @@
 <?php
 
 //Hint - Open Closed Principle
-class AnotherProgrammer
+interface Members
 {
+    function code();
+}
+
+class AnotherProgrammer implements Members
+{
+   public $member = 'Programmer';
+
     public function code()
     {
         return 'coding';
@@ -10,21 +17,33 @@ class AnotherProgrammer
 }
 class Tester
 {
-    public function test()
+    public $member = 'Tester';
+
+    public function code()
     {
         return 'testing';
     }
 }
 class ProjectManagement
 {
-    public function process($member)
+    public $member;
+
+    function __construct($member)
     {
-        if ($member instanceof AnotherProgrammer) {
-            $member->code();
-        } elseif ($member instanceof Tester) {
-            $member->test();
-        };
+        $this->member = $member;
+    }
+    function process($member)
+    {
+        switch ($member)
+        {
+            case ($this->member instanceof AnotherProgrammer): return $member->code();
+                breake;
+            case ($this->member instanceof Tester): return $member->code();
+                breake;
+        }
         throw new Exception('Invalid input member');
     }
 }
 
+$projectManagement = new ProjectManagement();
+$projectManagement->process('Tester');

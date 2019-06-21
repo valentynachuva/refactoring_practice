@@ -1,10 +1,15 @@
 <?php
 
 //Hint - Liskov Substitution Principle
-class Rectangle
+abstract class Figure
 {
-    protected $width;
-    protected $height;
+    public $width;
+    public $height;
+    public function __construct($width = 0, $height = 0)
+    {
+        $this->width = $width;
+        $this->height = $height;
+    }
 
     public function setHeight($height)
     {
@@ -25,25 +30,31 @@ class Rectangle
     {
         return $this->width;
     }
-
+    abstract function area();
+}
+class Rectangle extends Figure
+{
     public function area()
     {
         return $this->height * $this->width;
     }
 }
 
-class Square extends Rectangle
+class Square extends Figure
 {
-    public function setHeight($value)
-    {
-        $this->width = $value;
-        $this->height = $value;
-    }
+    protected $size;
 
-    public function setWidth($value)
+    public function setSize($size)
     {
-        $this->width = $value;
-        $this->height = $value;
+        $this->size = $size;
+    }
+    public function getSize($size)
+    {
+        $this->size = $size;
+    }
+    public function area()
+    {
+        return $this->height * $this->width;
     }
 }
 

@@ -65,11 +65,11 @@ class RectangleTest
 
     public function testArea()
     {
-        var_dump($this->rectangle->setHeight(2));
-        var_dump($this->rectangle->setWidth(3));
+        $this->rectangle->setHeight(2);
+        $this->rectangle->setWidth(3);
        
       if ($this->rectangle->area() !== 6) {
-            return var_dump($this->rectangle->area()) . "Bad area \n";
+            return  "Bad area \n";
         } else {
             return "Test passed! \n";
         }

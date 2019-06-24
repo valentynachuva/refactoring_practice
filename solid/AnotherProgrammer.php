@@ -8,16 +8,16 @@ interface Members
 
 class AnotherProgrammer implements Members
 {
-   public $member = 'Programmer';
+   private $member = 'Programmer';
 
     public function code()
     {
         return 'coding';
     }
 }
-class Tester
+class Tester implements Members
 {
-    public $member = 'Tester';
+    private $member = 'Tester';
 
     public function code()
     {
@@ -26,9 +26,9 @@ class Tester
 }
 class ProjectManagement
 {
-    public $member;
+    private $member;
 
-    function __construct($member)
+    function __construct(Members $member)
     {
         $this->member = $member;
     }
